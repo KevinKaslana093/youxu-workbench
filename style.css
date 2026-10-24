@@ -4,3 +4,5 @@
 @media(max-width:760px){.mobile-only{display:inline-block}.header-actions{gap:6px}.page-heading{align-items:start;flex-wrap:wrap}.schedule-event{width:100%;text-align:left}}
 
 .flow-steps{padding-left:22px;font-size:12px;line-height:2;color:#66765f}.flow-steps li{padding:6px 0 8px 6px}
+
+.skill-discovery .toolbar select{width:auto;flex:1;min-width:160px}.auto-discover{display:flex;align-items:center;gap:8px;font-size:11px;line-height:1.7}.auto-discover input{width:15px;height:15px}.skill-discovery .resource-card{padding:18px}.skill-discovery .resource-card h3{font-size:13px}.skill-discovery .resource-card p{font-size:11px}

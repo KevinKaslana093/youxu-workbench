@@ -1,0 +1,38 @@
+name: Refresh Skills and Publish
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+  schedule:
+    - cron: '17 */6 * * *'
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+concurrency:
+  group: youxu-pages
+  cancel-in-progress: false
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v6
+      - uses: actions/configure-pages@v5
+      - name: Refresh public Skill catalog
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: python3 scripts/refresh_skills.py
+      - name: Prepare public website
+        run: |
+          mkdir -p public
+          cp index.html style.css app.js workflows.js skills.js mark.svg share.svg skill-catalog.json public/
+          touch public/.nojekyll
+      - uses: actions/upload-pages-artifact@v4
+        with:
+          path: public
+      - uses: actions/deploy-pages@v4
+        id: deployment
