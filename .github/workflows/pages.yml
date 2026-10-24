@@ -29,7 +29,7 @@ jobs:
       - name: Prepare public website
         run: |
           mkdir -p public
-          cp index.html style.css app.js workflows.js skills.js mark.svg share.svg skill-catalog.json public/
+          cp index.html style.css app.js workflows.js skills.js bridge.js mark.svg share.svg skill-catalog.json public/
           touch public/.nojekyll
       - uses: actions/upload-pages-artifact@v4
         with:

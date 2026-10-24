@@ -6,3 +6,5 @@
 .flow-steps{padding-left:22px;font-size:12px;line-height:2;color:#66765f}.flow-steps li{padding:6px 0 8px 6px}
 
 .skill-discovery .toolbar select{width:auto;flex:1;min-width:160px}.auto-discover{display:flex;align-items:center;gap:8px;font-size:11px;line-height:1.7}.auto-discover input{width:15px;height:15px}.skill-discovery .resource-card{padding:18px}.skill-discovery .resource-card h3{font-size:13px}.skill-discovery .resource-card p{font-size:11px}
+
+@media(max-width:760px){header{height:auto;min-height:76px;flex-wrap:wrap;gap:12px;padding:14px 18px}.header-actions{flex-wrap:wrap;gap:6px}.header-actions button{font-size:10px;padding:9px}.route{overflow-wrap:anywhere}#connect-computer{color:#4c6e3e}}
